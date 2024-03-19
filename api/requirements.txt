@@ -9,3 +9,9 @@ gevent==22.10.2
 python-dotenv==0.21.0
 python-dateutil==2.8.2
 protobuf==4.21.12
+
+
+# https://stackoverflow.com/questions/77213053/why-did-flask-start-failing-with-importerror-cannot-import-name-url-quote-fr
+Werkzeug==2.2.2
+
+requests
