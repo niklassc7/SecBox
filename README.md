@@ -51,6 +51,9 @@ DB="secbox"
 Finally run:
 ```sh
 # Replace api.env with your env-file
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 source api.env
 python3 webapp_api.py
 ```
