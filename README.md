@@ -30,8 +30,32 @@ with `pip install -r requirements.txt`.
 
 Also recommended `python-gevent-websocket`.
 
-Setup a [mongo DB](https://www.mongodb.com/) database and create an .env file
-in this directory:
+Setup a [mongo DB](https://www.mongodb.com/) database.
+```sh
+# Arch
+yay -S mongodb-bin
+sudo -u mongodb /usr/bin/mongod --config /etc/mongodb.conf
+
+# Ubuntu 22.04
+sudo apt-get install gnupg curl
+curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
+   sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+sudo systemctl daemon-reload
+sudo systemctl start mongod
+
+
+# Check DBs
+# The DB will be created automatically by SecBox if the mongodb-daemon is running
+# and `webapp_api.py` is started.
+mongosh
+show dbs
+```
+
+
+Create an .env file in this directory:
 ```sh
 DB_PORT="27017"
 HOST_BITNESS=64
