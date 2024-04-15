@@ -13,6 +13,12 @@ and run `npm install`. Create a .env file with the value VUE_APP_ROOT with the d
 
 To start the frontend, run `npm run serve`, the frontend should now be accessible at the address you specified, e.g. `localhost:8080`.
 
+```sh
+npm install
+source app.env
+npm run serve
+```
+
 ## Backend Setup
 The backend requires [python 3.9](https://www.python.org/downloads/release/python-390/) and [pip](https://pip.pypa.io/en/stable/installation/).
 All dependencies required for the backend can be installed in
