@@ -14,6 +14,7 @@ and run `npm install`. Create a .env file with the value VUE_APP_ROOT with the d
 To start the frontend, run `npm run serve`, the frontend should now be accessible at the address you specified, e.g. `localhost:8080`.
 
 ```sh
+cd app
 npm install
 source app.env
 npm run serve
@@ -57,25 +58,26 @@ show dbs
 
 Create an .env file in this directory:
 ```sh
-DB_PORT="27017"
-HOST_BITNESS=64
-HOST="mongodb+srv://"
-DB= "DB?"
+export DB_PORT="27017"
+export HOST_BITNESS=64
+export HOST="mongodb+srv://"
+export DB= "DB?"
 ```
 
 So for a local database called "secbox" this could look like
 
 ```sh
-DB_PORT="27017"
-HOST_BITNESS=64
-HOST="localhost"
-DB="secbox"
+export DB_PORT="27017"
+export HOST_BITNESS=64
+export HOST="localhost"
+export DB="secbox"
 ```
 
 Finally run:
 ```sh
+cd api
+[ -d .venv ] || python3 -m venv .venv
 # Replace api.env with your env-file
-python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 source api.env
@@ -99,8 +101,9 @@ sudo ./setup.sh
 The host can then be run from the host directory by running:
 
 ```sh
+cd host
 sudo -s
-python3 -m venv .venv
+[ -d .venv ] || python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 source host.env
