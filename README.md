@@ -37,6 +37,9 @@ Setup a [mongo DB](https://www.mongodb.com/) database.
 yay -S mongodb-bin
 sudo -u mongodb /usr/bin/mongod --config /etc/mongodb.conf
 
+# Docker
+docker run -p 27017:27017 --rm --name secbox-mongo mongo:latest
+
 # Ubuntu 22.04
 sudo apt-get install gnupg curl
 curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
