@@ -1,0 +1,32 @@
+services:
+  app:
+    ports:
+      - "8080:8080"
+    build: ./app
+    networks:
+      - secbox
+
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    depends_on:
+      - mongo
+    networks:
+      - secbox
+
+  mongo:
+    image: mongo
+    restart: always
+    # environment:
+    ports:
+      - "27017:27017"
+    networks:
+      - secbox
+
+  # host:
+  #   build: ./host
+
+networks:
+  secbox:
+    driver: bridge
