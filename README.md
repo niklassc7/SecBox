@@ -3,7 +3,7 @@ SecBox tool; a lightweight, container based malware analysis sandbox.
 Requires Python version 3.9.
 
 ## Frontend Setup
-The frontend requires [Node 16.X](https://www.stewright.me/2022/01/tutorial-install-nodejs-16-on-ubuntu-20-04/) and
+The frontend requires [Node 16.X](https://www.stewright.me/2022/01/tutorial-install-nodejs-16-on-ubuntu-20-04/) (and npm) and
  [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable). To install the dependencies go to 
 ```
 ├── SecBox
