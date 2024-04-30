@@ -10,6 +10,8 @@ services:
     build:
       context: .
       dockerfile: api/Dockerfile
+    ports:
+      - "5000:5000"
     depends_on:
       - mongo
     networks:
