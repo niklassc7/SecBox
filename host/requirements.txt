@@ -7,3 +7,6 @@ scapy==2.5.0
 gevent_websocket==0.10.1
 python-dotenv==0.21.0
 protobuf==4.21.12
+
+requests==2.31.0
+urllib3<2
